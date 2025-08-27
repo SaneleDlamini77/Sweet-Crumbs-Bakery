@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sweet Crumbs Bakery - Menu & Order</title>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="menu.html#order">Order Online</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="payment.html">Payment</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Menu Section -->
+  <section id="menu" aria-label="Bakery menu">
+    <h1>Sweet Crumbs Bakery Menu</h1>
+    <p>All our baked goods are made fresh daily with love and the best ingredients.</p>
+
+    <div>
+      <!-- Cakes -->
+      <div>
+        <h3>Chocolate Fudge Cake</h3>
+        <p>Rich chocolate cake with fudge icing</p>
+        <p>R250</p>
+      </div>
+      <div>
+        <h3>Red Velvet Cake</h3>
+        <p>Classic red velvet with cream cheese frosting</p>
+        <p>R280</p>
+      </div>
+      <div>
+        <h3>Carrot Cake</h3>
+        <p>Moist carrot cake with walnuts</p>
+        <p>R240</p>
+      </div>
+      <div>
+        <h3>Vanilla Buttercream Cake</h3>
+        <p>Classic vanilla cake with smooth buttercream</p>
+        <p>R220</p>
+      </div>
+      <div>
+        <h3>Black Forest Cake</h3>
+        <p>Chocolate cake with cherries and cream</p>
+        <p>R300</p>
+      </div>
+
+      <!-- Newly added items -->
+      <div>
+        <h3>Lemon Drizzle Cake</h3>
+        <p>Zesty lemon sponge with sweet drizzle</p>
+        <p>R200</p>
+      </div>
+      <div>
+        <h3>Coconut Cream Cake</h3>
+        <p>Soft cake with coconut cream layers</p>
+        <p>R240</p>
+      </div>
+      <div>
+        <h3>Tiramisu Cake</h3>
+        <p>Coffee-flavored Italian classic</p>
+        <p>R320</p>
+      </div>
+      <div>
+        <h3>Classic Cheesecake</h3>
+        <p>Creamy cheesecake with biscuit base</p>
+        <p>R280</p>
+      </div>
+      <div>
+        <h3>Oreo Cake</h3>
+        <p>Cookies and cream layered cake</p>
+        <p>R260</p>
+      </div>
+      <div>
+        <h3>Nutella Hazelnut Cake</h3>
+        <p>Rich Nutella and hazelnut delight</p>
+        <p>R310</p>
+      </div>
+      <div>
+        <h3>Strawberry Shortcake</h3>
+        <p>Light sponge with strawberries and cream</p>
+        <p>R290</p>
+      </div>
+      <div>
+        <h3>Banana Cake</h3>
+        <p>Moist banana flavored cake</p>
+        <p>R210</p>
+      </div>
+      <div>
+        <h3>Marble Cake</h3>
+        <p>Chocolate and vanilla swirls</p>
+        <p>R220</p>
+      </div>
+      <div>
+        <h3>Rainbow Cake</h3>
+        <p>Colorful layers with vanilla frosting</p>
+        <p>R350</p>
+      </div>
+      <div>
+        <h3>Ferrero Rocher Cake</h3>
+        <p>Hazelnut chocolate luxury cake</p>
+        <p>R370</p>
+      </div>
+      <div>
+        <h3>Mocha Coffee Cake</h3>
+        <p>Chocolate and coffee blend</p>
+        <p>R280</p>
+      </div>
+      <div>
+        <h3>Pineapple Cream Cake</h3>
+        <p>Sweet pineapple cream-filled cake</p>
+        <p>R230</p>
+      </div>
+      <div>
+        <h3>Almond Cake</h3>
+        <p>Nutty almond sponge delight</p>
+        <p>R240</p>
+      </div>
+      <div>
+        <h3>Mint Chocolate Cake</h3>
+        <p>Chocolate cake with cool mint flavor</p>
+        <p>R260</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Section -->
+  <section id="order" aria-label="Order cakes online">
+    <h2>Order Online</h2>
+
+    <label for="items">Select Item</label>
+    <select id="items" aria-label="Select cake to order">
+      <option value="Chocolate Fudge Cake" data-price="250">Chocolate Fudge Cake - R250</option>
+      <option value="Red Velvet Cake" data-price="280">Red Velvet Cake - R280</option>
+      <option value="Carrot Cake" data-price="240">Carrot Cake - R240</option>
+      <option value="Vanilla Buttercream Cake" data-price="220">Vanilla Buttercream Cake - R220</option>
+      <option value="Black Forest Cake" data-price="300">Black Forest Cake - R300</option>
+      <option value="Lemon Drizzle Cake" data-price="200">Lemon Drizzle Cake - R200</option>
+      <option value="Coconut Cream Cake" data-price="240">Coconut Cream Cake - R240</option>
+      <option value="Tiramisu Cake" data-price="320">Tiramisu Cake - R320</option>
+      <option value="Classic Cheesecake" data-price="280">Classic Cheesecake - R280</option>
+      <option value="Oreo Cake" data-price="260">Oreo Cake - R260</option>
+      <option value="Nutella Hazelnut Cake" data-price="310">Nutella Hazelnut Cake - R310</option>
+      <option value="Strawberry Shortcake" data-price="290">Strawberry Shortcake - R290</option>
+      <option value="Banana Cake" data-price="210">Banana Cake - R210</option>
+      <option value="Marble Cake" data-price="220">Marble Cake - R220</option>
+      <option value="Rainbow Cake" data-price="350">Rainbow Cake - R350</option>
+      <option value="Ferrero Rocher Cake" data-price="370">Ferrero Rocher Cake - R370</option>
+      <option value="Mocha Coffee Cake" data-price="280">Mocha Coffee Cake - R280</option>
+      <option value="Pineapple Cream Cake" data-price="230">Pineapple Cream Cake - R230</option>
+      <option value="Almond Cake" data-price="240">Almond Cake - R240</option>
+      <option value="Mint Chocolate Cake" data-price="260">Mint Chocolate Cake - R260</option>
+    </select>
+
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" min="1" value="1" aria-label="Quantity to order"/>
+
+    <button id="add-to-cart">Add to Cart</button>
+
+    <table id="cart" aria-label="Shopping cart">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price (each)</th>
+          <th>Total</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Cart items go here -->
+      </tbody>
+    </table>
+
+    <p id="cart-total" aria-live="polite" aria-atomic="true">Total: R0</p>
+
+    <button id="checkout-btn" style="display:none;" onclick="location.href='payment.html'">
+      Checkout
+    </button>
+  </section>
+
+  <script>
+    const itemsSelect = document.getElementById('items');
+    const quantityInput = document.getElementById('quantity');
+    const addToCartBtn = document.getElementById('add-to-cart');
+    const cartTableBody = document.querySelector('#cart tbody');
+    const cartTotalSpan = document.getElementById('cart-total');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    let cart = [];
+
+    function renderCart() {
+      cartTableBody.innerHTML = '';
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const row = document.createElement('tr');
+
+        const nameCell = document.createElement('td');
+        nameCell.textContent = item.name;
+        row.appendChild(nameCell);
+
+        const quantityCell = document.createElement('td');
+        quantityCell.textContent = item.quantity;
+        row.appendChild(quantityCell);
+
+        const priceCell = document.createElement('td');
+        priceCell.textContent = `R${item.price}`;
+        row.appendChild(priceCell);
+
+        const totalCell = document.createElement('td');
+        const itemTotal = item.price * item.quantity;
+        totalCell.textContent = `R${itemTotal}`;
+        row.appendChild(totalCell);
+
+        const removeCell = document.createElement('td');
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = '✕';
+        removeBtn.setAttribute('aria-label', `Remove ${item.name} from cart`);
+
+        removeBtn.addEventListener('click', () => {
+          cart.splice(index, 1);
+          renderCart();
+        });
+
+        removeCell.appendChild(removeBtn);
+        row.appendChild(removeCell);
+
+        cartTableBody.appendChild(row);
+
+        total += itemTotal;
+      });
+
+      cartTotalSpan.textContent = `Total: R${total}`;
+      checkoutBtn.style.display = cart.length > 0 ? 'inline-block' : 'none';
+    }
+
+    addToCartBtn.addEventListener('click', () => {
+      const selectedOption = itemsSelect.selectedOptions[0];
+      const itemName = selectedOption.value;
+      const itemPrice = Number(selectedOption.getAttribute('data-price'));
+      let qty = Number(quantityInput.value);
+
+      if (qty < 1 || isNaN(qty)) {
+        alert('Please enter a valid quantity (1 or more).');
+        return;
+      }
+
+      const existingItemIndex = cart.findIndex(item => item.name === itemName);
+      if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity += qty;
+      } else {
+        cart.push({ name: itemName, price: itemPrice, quantity: qty });
+      }
+
+      renderCart();
+      quantityInput.value = 1;
+    });
+
+    renderCart();
+  </script>
+
+</body>
+</html>
