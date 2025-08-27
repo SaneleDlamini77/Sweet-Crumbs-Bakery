@@ -1,100 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"> <!-- Defines character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes page responsive -->
   <title>Checkout - Sweet Crumbs Bakery</title>
 </head>
-<body style="background-color:yellow; color:black; font-family:Arial, sans-serif; margin:0; padding:0;">
+<body>
 
-  <!-- Navigation -->
-  <nav style="text-align:center; padding:10px; background:black; color:yellow;">
-    <a href="index.html" style="margin:0 15px; color:yellow; text-decoration:none; font-weight:bold;">Home</a>
-    <a href="menu.html" style="margin:0 15px; color:yellow; text-decoration:none; font-weight:bold;">Menu</a>
-    <a href="gallery.html" style="margin:0 15px; color:yellow; text-decoration:none; font-weight:bold;">Gallery</a>
-    <a href="contact.html" style="margin:0 15px; color:yellow; text-decoration:none; font-weight:bold;">Contact</a>
+  <!-- ===================== Navigation ===================== -->
+  <!-- Simple navigation menu linking to other pages -->
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="menu.html">Menu</a> |
+    <a href="gallery.html">Gallery</a> |
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Header -->
-  <header style="text-align:center; padding:20px;">
+  <!-- ===================== Page Header ===================== -->
+  <header>
     <h1>Sweet Crumbs Bakery - Checkout</h1>
   </header>
 
-  <main style="max-width:800px; margin:auto; padding:20px;">
-
-    <!-- Order Summary -->
-    <section style="margin-bottom:20px; border:2px solid black; padding:15px;">
+  <main>
+    <!-- ===================== Order Summary Section ===================== -->
+    <section>
       <h2>Your Order</h2>
-      <ul id="order-list"></ul>
-      <p><strong>Total: R<span id="order-total">0</span></strong></p>
+      <ul id="order-list"></ul> <!-- Dynamic list of cart items will be inserted here -->
+      <p><strong>Total: R<span id="order-total">0</span></strong></p> <!-- Shows total order amount -->
     </section>
 
-    <!-- Delivery / Pickup -->
-    <section style="margin-bottom:20px; border:2px solid black; padding:15px;">
+    <!-- ===================== Delivery or Pickup ===================== -->
+    <section>
       <h2>Delivery / Pickup</h2>
-      <label><input type="radio" name="delivery" value="pickup" checked> Pickup (Pay on collection)</label><br>
-      <label><input type="radio" name="delivery" value="delivery"> Delivery (+R25)</label><br>
-      <label>Address (required for delivery):<br>
-        <textarea id="address" rows="3" style="width:100%;"></textarea>
-      </label>
-    </section>
-
-    <!-- Customer Details -->
-    <section style="margin-bottom:20px; border:2px solid black; padding:15px;">
-      <h2>Customer Details</h2>
-      <label>Full Name:<br>
-        <input type="text" id="name" style="width:100%;">
+      <!-- Radio buttons allow user to choose between pickup or delivery -->
+      <label>
+        <input type="radio" name="delivery" value="pickup" checked> Pickup (Pay on collection)
       </label><br>
-      <label>Phone Number:<br>
-        <input type="tel" id="phone" style="width:100%;">
+      <label>
+        <input type="radio" name="delivery" value="delivery"> Delivery (+R25)
+      </label><br>
+
+      <!-- Textarea for delivery address (only required if delivery is selected) -->
+      <label>
+        Address (required for delivery):<br>
+        <textarea id="address" rows="3"></textarea>
       </label>
     </section>
 
-    <!-- Payment Options -->
-    <section style="margin-bottom:20px; border:2px solid black; padding:15px;">
+    <!-- ===================== Customer Details ===================== -->
+    <section>
+      <h2>Customer Details</h2>
+      <!-- Input fields for name and phone -->
+      <label>
+        Full Name:<br>
+        <input type="text" id="name">
+      </label><br>
+      <label>
+        Phone Number:<br>
+        <input type="tel" id="phone">
+      </label>
+    </section>
+
+    <!-- ===================== Payment Options ===================== -->
+    <section>
       <h2>Payment Method</h2>
+      <!-- Payment method selection -->
       <label><input type="radio" name="payment" value="card" checked> Credit / Debit Card</label><br>
       <label><input type="radio" name="payment" value="eft"> EFT (Bank Transfer)</label><br>
-      <label><input type="radio" name="payment" value="cash"> Cash on Delivery / Pickup</label>
+      <label><input type="radio" name="payment" value="cash"> Cash on Delivery / Pickup</label><br>
 
-      <div id="bank-details" style="margin-top:10px;">
+      <!-- Bank details form fields (only required if EFT or Card is selected) -->
+      <div id="bank-details">
         <label>Bank Name:<br>
-          <input type="text" id="bank-name" style="width:100%;">
+          <input type="text" id="bank-name">
         </label><br>
         <label>Account Number:<br>
-          <input type="text" id="account-number" style="width:100%;">
+          <input type="text" id="account-number">
         </label><br>
         <label>Branch Code:<br>
-          <input type="text" id="branch-code" style="width:100%;">
+          <input type="text" id="branch-code">
         </label>
       </div>
     </section>
 
-    <!-- Confirm Button -->
-    <section style="text-align:center;">
-      <button type="button" onclick="confirmPayment()" style="background:black; color:yellow; font-size:1.2rem; padding:12px 20px; border:none; cursor:pointer;">
-        Confirm & Pay
-      </button>
+    <!-- ===================== Confirm Order Button ===================== -->
+    <section>
+      <button type="button" onclick="confirmPayment()">Confirm & Pay</button>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer style="text-align:center; padding:15px; background:black; color:yellow; margin-top:20px;">
+  <!-- ===================== Footer ===================== -->
+  <footer>
     <p>&copy; 2025 Sweet Crumbs Bakery. All Rights Reserved.</p>
   </footer>
 
+  <!-- ===================== JavaScript ===================== -->
   <script>
+    // Get cart items from localStorage (saved from menu/cart page)
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    // Elements for displaying order list and total
     const orderList = document.getElementById("order-list");
     const orderTotalEl = document.getElementById("order-total");
 
+    // Function to render cart items in the order summary
     function renderCart() {
-      orderList.innerHTML = "";
+      orderList.innerHTML = ""; // Clear old list
       let total = 0;
 
+      // If no items are in the cart
       if (cartItems.length === 0) {
         orderList.innerHTML = "<li>No items in cart.</li>";
       } else {
+        // Loop through items and display them
         cartItems.forEach(item => {
           const subtotal = item.price * item.quantity;
           total += subtotal;
@@ -102,16 +120,25 @@
         });
       }
 
+      // Add delivery fee if delivery option is selected
       const deliveryType = document.querySelector('input[name="delivery"]:checked').value;
       if (deliveryType === "delivery") total += 25;
 
+      // Update total
       orderTotalEl.innerText = total;
     }
 
+    // Run renderCart on page load
     renderCart();
-    document.querySelectorAll('input[name="delivery"]').forEach(el => el.addEventListener("change", renderCart));
 
+    // Recalculate total when delivery option changes
+    document.querySelectorAll('input[name="delivery"]').forEach(el =>
+      el.addEventListener("change", renderCart)
+    );
+
+    // Function to confirm payment and save order
     function confirmPayment() {
+      // Collect user inputs
       const name = document.getElementById("name").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const deliveryType = document.querySelector('input[name="delivery"]:checked').value;
@@ -121,6 +148,7 @@
       const accountNumber = document.getElementById("account-number").value.trim();
       const branchCode = document.getElementById("branch-code").value.trim();
 
+      // Validation: ensure required fields are filled
       if (!name || !phone) {
         alert("Please fill in your name and phone number.");
         return;
@@ -136,6 +164,7 @@
         return;
       }
 
+      // Save order details in localStorage for thank-you page
       localStorage.setItem("orderConfirmed", JSON.stringify({
         cartItems,
         deliveryType,
@@ -147,7 +176,10 @@
         total: orderTotalEl.innerText
       }));
 
+      // Show confirmation message
       alert("Order confirmed! Total: R" + orderTotalEl.innerText);
+
+      // Redirect to thank-you page
       window.location.href = "thankyou.html";
     }
   </script>
