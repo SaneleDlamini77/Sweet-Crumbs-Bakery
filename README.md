@@ -1,6 +1,8 @@
 # Sweet-Crumbs-Bakery
 Welcome to the official Sweet Crumbs Bakery website project! This site was created to showcase our bakery’s history, menu, and services while allowing customers to place online orders and learn more about us.
 
+# link to github - https://github.com/SaneleDlamini77/Sweet-Crumbs-Bakery 
+
 # Project Overview
 # The Sweet Crumbs Bakery website is a simple, clean, and user-friendly platform that provides:
 -Information about the bakery’s history, mission, and goals.
